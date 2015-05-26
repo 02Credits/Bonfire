@@ -48,6 +48,7 @@ module.exports = function(grunt) {
         shell: {
             add: {
                 command: [
+                    "git add -u",
                     "git add GruntFile.js",
                     "git add package.json",
                     "git add src/*"
@@ -65,13 +66,12 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('gitCommit', [ 'shell:add', 'shell:commit' ]);
-    grunt.registerTask('gitPush' ['shell:push']);
-    grunt.registerTask('build', [ 'clean:build', 'copy', 'babel', 'coffee' ]);
+    grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
+    grunt.registerTask('git', [ 'gitCommit', 'shell:push' ]);
+    grunt.registerTask('build', [ 'gitCommit', 'clean:build', 'copy', 'babel', 'coffee' ]);
     grunt.registerTask('package',
                        [
-                           'gitCommit',
-                           'gitPush',
+                           'git',
                            'clean:dist',
                            'electron',
                            'create-windows-installer'

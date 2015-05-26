@@ -2,8 +2,6 @@ module.exports = function(grunt) {
     require("load-grunt-tasks")(grunt);
     var exec = require('child_process').exec;
 
-    grunt.loadNpmTasks('grumt-bumpx');
-
     grunt.initConfig({
         copy: {
             build: {

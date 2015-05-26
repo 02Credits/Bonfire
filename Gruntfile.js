@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 cwd: 'src',
-                src: [ '**', '!**/*.js', '!**/*.tern-port' ],
+                src: [ '**', '!**/*.coffee', '!**/*.js', '!**/*.tern-port' ],
                 dest: 'build',
                 expand: true
             }
@@ -15,6 +15,14 @@ module.exports = function(grunt) {
             build: {
                 cwd: 'src',
                 src: [ '**/*.js' ],
+                dest: 'build',
+                expand: true
+            }
+        },
+        coffee: {
+            build: {
+                cwd: 'src',
+                src: [ '**/*.coffee' ],
                 dest: 'build',
                 expand: true
             }
@@ -77,7 +85,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
     grunt.registerTask('git', [ 'gitCommit', 'shell:push' ]);
-    grunt.registerTask('build', [ 'bump', 'git', 'clean:build', 'copy', 'babel']);
+    grunt.registerTask('build', [ 'bump', 'git', 'clean:build', 'copy', 'babel', 'coffee']);
     grunt.registerTask('package',
                        [
                            'clean:dist',

@@ -14,7 +14,7 @@ handleSquirrelEvents = (appstart) ->
     appStart()
     return
 
-  m = options[0].math /--squirrel-([a-z]+)/
+  m = options[0].match /--squirrel-([a-z]+)/
   unless m and m[1]
     appStart()
     return

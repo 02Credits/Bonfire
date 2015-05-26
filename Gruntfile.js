@@ -45,33 +45,37 @@ module.exports = function(grunt) {
             description: 'An extensible chat application.'
         },
 
-        gitadd: {
-            options: {
-                all: true
+        shell: {
+            add: {
+                command: [
+                    "git add GruntFile.js",
+                    "git add package.json",
+                    "git add src/*"
+                ].join('&&')
             },
-            files: {
-                cwd: 'src',
-                src: [ '**' ],
-                expand: true
+            commit: {
+                command: "git commit -m \"Auto Commit\""
+            },
+            push: {
+                command: "git push"
+            },
+            pull: {
+                command: "git pull"
             }
-        },
-        gitcommit: {
-            files: {
-                cwd: 'src',
-                src: [ '**' ],
-                expand: true
-            }
-        },
-        gitpush: {}
+        }
     });
 
-    grunt.registerTask(
-        'build',
-        'Compiles all of the assets and copies the files to the build directory.',
-        [ 'clean:build', 'copy', 'babel', 'coffee' ]
-    );
-
-    grunt.registerTask('package', [ 'clean:dist', 'electron', 'create-windows-installer']);
+    grunt.registerTask('gitCommit', [ 'shell:add', 'shell:commit' ]);
+    grunt.registerTask('gitPush' ['shell:push']);
+    grunt.registerTask('build', [ 'clean:build', 'copy', 'babel', 'coffee' ]);
+    grunt.registerTask('package',
+                       [
+                           'gitCommit',
+                           'gitPush',
+                           'clean:dist',
+                           'electron',
+                           'create-windows-installer'
+                       ]);
 
     grunt.registerTask('run', function() {
         var done = this.async();

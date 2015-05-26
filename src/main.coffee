@@ -11,16 +11,16 @@ uninstallShortcuts = (finish) ->
 handleSquirrelEvents = (appstart) ->
   options = process.argv[1..]
   unless options and options.length >= 1
-    appStart()
+    appstart()
     return
 
   m = options[0].match /--squirrel-([a-z]+)/
   unless m and m[1]
-    appStart()
+    appstart()
     return
 
   if m[1] is 'firstrun'
-    appStart()
+    appstart()
     return
 
   app.on 'ready', ->

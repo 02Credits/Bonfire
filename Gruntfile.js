@@ -2,6 +2,8 @@ module.exports = function(grunt) {
     require("load-grunt-tasks")(grunt);
     var exec = require('child_process').exec;
 
+    grunt.loadNpmTasks('grumt-bumpx');
+
     grunt.initConfig({
         copy: {
             build: {
@@ -28,13 +30,15 @@ module.exports = function(grunt) {
             }
         },
         electron: {
-            options: {
-                name: 'Bonfire',
-                dir: 'build',
-                out: 'dist',
-                version: '0.26.1',
-                platform: 'win32',
-                arch: 'ia32'
+            windowsBuild: {
+                options: {
+                    name: 'Bonfire',
+                    dir: 'build',
+                    out: 'dist',
+                    version: '0.26.1',
+                    platform: 'win32',
+                    arch: 'ia32'
+                }
             }
         },
         'create-windows-installer': {
@@ -63,15 +67,21 @@ module.exports = function(grunt) {
             pull: {
                 command: "git pull"
             }
+        },
+
+        bump: {
+            options: {
+                level: "patch"
+            },
+            src: [ "package.json", "src/package.json" ]
         }
     });
 
     grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
     grunt.registerTask('git', [ 'gitCommit', 'shell:push' ]);
-    grunt.registerTask('build', [ 'gitCommit', 'clean:build', 'copy', 'babel']);
+    grunt.registerTask('build', [ 'bump', 'git', 'clean:build', 'copy', 'babel']);
     grunt.registerTask('package',
                        [
-                           'git',
                            'clean:dist',
                            'electron',
                            'create-windows-installer'

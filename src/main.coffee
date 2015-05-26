@@ -31,6 +31,7 @@ handleSquirrelEvents = (appstart) ->
       when 'obsolete' then app.quit()
 
 handleSquirrelEvents ->
+  app = require 'app'
   BrowserWindow = require 'browser-window'
   require('crash-reporter').start()
 

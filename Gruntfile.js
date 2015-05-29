@@ -95,9 +95,11 @@ module.exports = function(grunt) {
 
     grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
     grunt.registerTask('git', [ 'gitCommit', 'shell:push' ]);
-    grunt.registerTask('build', [ 'bump', 'git', 'clean:build', 'copy', 'babel', 'coffee', 'sass' ]);
+    grunt.registerTask('build', [ 'clean:build', 'copy', 'babel', 'coffee', 'sass' ]);
     grunt.registerTask('package',
                        [
+                           'bump',
+                           'git',
                            'clean:dist',
                            'electron',
                            'create-windows-installer'

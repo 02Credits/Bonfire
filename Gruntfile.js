@@ -94,7 +94,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
-    grunt.registerTask('git', [ 'gitCommit', 'shell:push' ]);
+    grunt.registerTask('git', [ 'shell:pull', 'gitCommit', 'shell:push' ]);
     grunt.registerTask('build', [ 'clean:build', 'copy', 'babel', 'coffee', 'sass' ]);
     grunt.registerTask('package',
                        [

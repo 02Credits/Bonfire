@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 
         bump: {
             options: {
-                level: "prerelease"
+                level: "patch"
             },
             src: [ "src/package.json" ]
         }

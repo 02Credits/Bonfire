@@ -1,14 +1,16 @@
 app = require 'app'
+path = require 'path'
+childProcess = require 'child_process'
 
 installShortcuts = (finish) ->
   target = path.basename(process.execPath)
   updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
-  spawn(updateDotExe, ['--createShortcut', target]).on('exit', finish)
+  childProcess.spawn(updateDotExe, ['--createShortcut', target]).on('exit', finish)
 
 uninstallShortcuts = (finish) ->
   target = path.basename(process.execPath)
   updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
-  spawn(updateDotExe, ['--removeShortcut', target]).on('exit', finish)
+  childProcess.spawn(updateDotExe, ['--removeShortcut', target]).on('exit', finish)
 
 handleSquirrelEvents = (appstart) ->
   options = process.argv[1..]

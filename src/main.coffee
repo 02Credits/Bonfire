@@ -1,3 +1,5 @@
+app = require 'app'
+
 installShortcuts = (finish) ->
   target = path.basename(process.execPath)
   updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
@@ -31,7 +33,6 @@ handleSquirrelEvents = (appstart) ->
       when 'obsolete' then app.quit()
 
 handleSquirrelEvents ->
-  app = require 'app'
   BrowserWindow = require 'browser-window'
   require('crash-reporter').start()
 

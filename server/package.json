@@ -1,0 +1,10 @@
+{
+    "name": "Bonfire-Server",
+    "version": "0.0.1",
+    "description": "Server for the bonfire chat client",
+    "main": "index.js",
+    "dependencies": {
+        "express": "^4.10.2",
+        "socket.io": "^1.3.5"
+    }
+}

@@ -1,0 +1,18 @@
+* Bonfire
+The end goal is to have a peer to peer chat application framework which
+will run on cryptographically signed javascript scripts.
+** Server
+The server is the main source of client files and the distributer of group messages.
+*** Send Files
+On client connect, the client will send a map with relative paths and hashes for every file currently on the file system.
+The server will then send a list of all the files that need downloaded
+The client would then run a startup file to get running
+**** File Watch
+Watches the clientFiles directory and whenever a file is changed it is sent to all of the clients
+Similarly every client watches its clientFiles directory and if a script is changed there it is sent to everyone else including the server.
+[[https://github.com/yuanchuan/node-watch][node-watch]]
+*** Group Messages
+Messages are simply resent to all group members.
+NOTE: Possibly store history on the server that way the clients can fetch what they dont know
+** Client
+The client deals with files as shown above but also listens for any group messages sent by the server

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         copy: {
             build: {
-                cwd: 'src',
+                cwd: 'client',
                 src: [ '**', '!**/*.coffee', '!**/*.js', '!**/*.sass', '!**/*.scss', '!**/*.tern-port' ],
                 dest: 'build',
                 expand: true
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         },
         babel: {
             build: {
-                cwd: 'src',
+                cwd: 'client',
                 src: [ '**/*.js' ],
                 dest: 'build',
                 expand: true
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         },
         coffee: {
             build: {
-                cwd: 'src',
+                cwd: 'client',
                 src: [ '**/*.coffee' ],
                 dest: 'build',
                 expand: true,
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         },
         sass: {
             build: {
-                cwd: 'src',
+                cwd: 'client',
                 src: [ '**/*.sass', '**/*.scss' ],
                 dest: 'build',
                 expand: true,
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
                     "git add -u",
                     "git add GruntFile.js",
                     "git add package.json",
-                    "git add src/*"
+                    "git add client/*"
                 ].join('&&')
             },
             commit: {
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
             options: {
                 level: "patch"
             },
-            src: [ "src/package.json" ]
+            src: [ "client/package.json" ]
         }
     });
 

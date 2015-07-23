@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Bonfire</title>
+        <link rel="stylesheet" href="bin/style.css">
+        <script src="https://s3-us-west-2.amazonaws.com/cdn.thegrid.io/gss/v2.0.0/v2.0.0/gss.js"></script>
+        <script type="text/javascript">
+          window.engine = new GSS(document, {"sidebarWidth": 250});
+        </script>
+
+        <script data-main="bin/main" src="bin/require.js"></script>
+        <script src="bin/linkify.amd.min.js"></script>
+        <script src="bin/linkify-string.amd.min.js"></script>
+    </head>
+    <body>
+        <div id="sidebar">
+            <div id="sidebar-content">
+                <p>Display Name<p>
+                <input id="name-input" autocomplete="off"/>
+            </div>
+        </div>
+        <div id="content">
+            <div id="messages">
+            </div>
+            <div id="input-bar">
+                <input id="input" autocomplete="off"/>
+            </div>
+        </div>
+
+        <style type="text/gss">
+         $gap == 30;
+         #content {
+             width: == ::window[width] - #sidebar[width];
+             height: == ::window[height];
+
+             #input-bar {
+                 width: == #content[width];
+                 height: == 40 + $gap * 2;
+
+                 #input {
+                     size: == #input-bar[size];
+                     padding-left: 20px;
+                 }
+
+                 @v |-(#input)-| gap($gap);
+                 @h |-(#input)-80-| gap($gap);
+             }
+
+             #messages {
+                 width: == #content[width];
+                 height: == #content[height] - #input-bar[height];
+             }
+
+             @h |(#input-bar)|;
+             @h |(#messages)|;
+             @v |(#messages)(#input-bar)|;
+         }
+
+         #sidebar {
+             width: == 250;
+             height: == ::window[height];
+
+             #sidebar-content {
+                 size: == #sidebar[size];
+             }
+
+             @h |-(#sidebar-content)-| gap($gap / 2);
+             @v |-(#sidebar-content)-| gap($gap / 2);
+         }
+
+         @h |(#sidebar)(#content)| in(::window);
+
+        </style>
+    </body>
+</html>

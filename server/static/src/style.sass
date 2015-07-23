@@ -1,0 +1,48 @@
+@import 'reset'
+
+$type-bg: #EAF6F7
+$type-fg: #914341
+$ui-bg: #525769
+$highlight: #FFF582
+$accent: #FF6448
+
+html
+  overflow: hidden
+  font-family: monospace
+  background-color: $ui-bg
+
+p
+  margin: 5px
+
+.greentext > p
+  color: green
+
+#sidebar-content > p
+  margin: 20px 20px 20px 20px
+
+a
+  color: $accent
+
+.message
+  margin: 10px
+  background-color: $type-bg
+  color: $type-fg
+  padding: 5px
+  display: inline-block
+  max-width: 75%
+  overflow: hidden
+
+.display-name
+  margin-left: 10px
+  margin-bottom: 10px
+  font-weight: bold
+
+#messages
+  overflow: auto
+
+#input
+  background-color: $type-bg
+  color: $type-fg
+
+#sidebar-content
+  background-color: $type-bg

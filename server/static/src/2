@@ -1,0 +1,5 @@
+define [
+  "./greentext"
+  "./links"
+  ], ->
+    arguments

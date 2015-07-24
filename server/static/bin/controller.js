@@ -35,17 +35,20 @@
     }
     render = function(message, id) {
       var j, len, plugin, scrollIfStuck;
-      for (j = 0, len = plugins.length; j < len; j++) {
-        plugin = plugins[j];
-        plugin(message);
-      }
-      messagesDiv.append(message.render);
-      scrollIfStuck = function() {
-        if (window.stuck) {
-          return scrollToBottom();
+      if (message != null) {
+        for (j = 0, len = plugins.length; j < len; j++) {
+          plugin = plugins[j];
+          plugin(message);
         }
-      };
-      return setTimeout(scrollIfStuck, 100);
+        messagesDiv.append(message.render);
+        scrollIfStuck = function() {
+          if (window.stuck) {
+            return scrollToBottom();
+          }
+        };
+        setTimeout(scrollIfStuck, 100);
+        return setTimeout(scrollIfStuck, 1000);
+      }
     };
     return {
       startup: function(messages, sendCallback) {

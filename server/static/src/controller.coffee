@@ -26,15 +26,17 @@ define ["jquery", "plugins"], ($, plugins) ->
     $('#name-input').val "Village Idiot"
 
   render = (message, id) ->
-    # This is a horrible hack and should be replaced at some point
-    for plugin in plugins
-      plugin(message)
-    messagesDiv.append message.render
-    scrollIfStuck = ->
-      if window.stuck
-        scrollToBottom()
-    # This hack is to allow whatever content was added to be rendered. Works pretty well.
-    setTimeout(scrollIfStuck, 100)
+    if message?
+      # This is a horrible hack and should be replaced at some point
+      for plugin in plugins
+        plugin(message)
+      messagesDiv.append message.render
+      scrollIfStuck = ->
+        if window.stuck
+          scrollToBottom()
+      # This hack is to allow whatever content was added to be rendered. Works pretty well.
+      setTimeout(scrollIfStuck, 100)
+      setTimeout(scrollIfStuck, 1000)
 
   startup: (messages, sendCallback) ->
     window.send = sendCallback

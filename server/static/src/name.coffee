@@ -1,3 +1,4 @@
 define ["jquery"], ($) ->
   (message) ->
-    message.render = "<p class='display-name'>" + $('#name-input').val() + "<\p>" + message.render
+    if message.displayName
+      message.render = "<p class='display-name'>" + message.displayName + "<\p>" + message.render

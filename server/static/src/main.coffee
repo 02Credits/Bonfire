@@ -1,4 +1,4 @@
-require.config
+requirejs.config
   shim:
     'socketio':
       exports: 'io'

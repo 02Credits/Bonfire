@@ -19,7 +19,8 @@
         text = text.trim();
         if (text.length < 500 && text.length !== 0) {
           send({
-            text: $('#input').val()
+            text: $('#input').val(),
+            displayName: $('#name-input').val()
           });
         }
         localStorage.displayName = $('#name-input').val();

@@ -15,7 +15,7 @@ define ["jquery", "plugins"], ($, plugins) ->
       text = $('input').val()
       text = text.trim()
       if text.length < 500 && text.length != 0
-        send { text: $('#input').val() }
+        send { text: $('#input').val(), displayName: $('#name-input').val() }
       localStorage.displayName = $('#name-input').val()
       $('#input').val ''
   $('#input').focus()

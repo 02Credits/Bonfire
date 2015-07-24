@@ -2,7 +2,9 @@
 (function() {
   define(["jquery"], function($) {
     return function(message) {
-      return message.render = "<p class='display-name'>" + $('#name-input').val() + "<\p>" + message.render;
+      if (message.displayName) {
+        return message.render = "<p class='display-name'>" + message.displayName + "<\p>" + message.render;
+      }
     };
   });
 

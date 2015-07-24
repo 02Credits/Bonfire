@@ -53,7 +53,8 @@ module.exports = function(grunt) {
                     out: 'dist',
                     version: '0.26.1',
                     platform: 'win32',
-                    arch: 'ia32'
+                    arch: 'ia32',
+                    icon: 'http://the-simmons.dnsalias.net/BFiconFinished.ico'
                 }
             }
         },

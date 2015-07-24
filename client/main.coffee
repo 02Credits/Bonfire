@@ -70,7 +70,7 @@ appstart = () ->
       width: 800
       height: 600
       "node-integration": false
-      icon: process.execPath + '/BFicon.png'
+      icon: __dirname + '/BFicon.png'
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"
     mainWindow.on 'closed', ->
       mainWindow = null

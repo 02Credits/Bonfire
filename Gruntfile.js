@@ -57,12 +57,13 @@ module.exports = function(grunt) {
                 }
             }
         },
-        'create-windows-installer': {
-            appDirectory: 'dist/Bonfire-win32',
-            outputDirectory: 'installer',
-            authors: '02Credits LLC',
-            exe: 'Bonfire.exe',
-            description: 'An extensible chat application.'
+        "create-windows-installer": {
+            appDirectory: "dist/Bonfire-win32",
+            outputDirectory: "installer",
+            authors: "02Credits LLC",
+            exe: "Bonfire.exe",
+            description: "An extensible chat application.",
+            title: "Bonfire"
         },
 
         shell: {

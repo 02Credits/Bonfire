@@ -66,7 +66,11 @@ appstart = () ->
     app.quit()
 
   app.on 'ready', ->
-    mainWindow = new BrowserWindow {width: 800, height: 600, "node-integration": false}
+    mainWindow = new BrowserWindow
+      width: 800
+      height: 600
+      "node-integration": false
+      icon: process.execPath + '/BFicon.png'
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"
     mainWindow.on 'closed', ->
       mainWindow = null

@@ -63,7 +63,8 @@ module.exports = function(grunt) {
             authors: "02Credits LLC",
             exe: "Bonfire.exe",
             description: "An extensible chat application.",
-            title: "Bonfire"
+            title: "Bonfire",
+            setupIcon: "BFiconFinished.ico"
         },
 
         shell: {

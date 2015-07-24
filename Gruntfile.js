@@ -65,7 +65,7 @@ module.exports = function(grunt) {
             description: "An extensible chat application.",
             title: "Bonfire",
             setupIcon: "./BFiconFinished.ico",
-            iconUrl: "the-simmons.dnsalias.net/BFiconFinished.ico"
+            iconUrl: "http://the-simmons.dnsalias.net/BFiconFinished.ico"
         },
 
         shell: {

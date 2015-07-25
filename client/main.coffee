@@ -12,7 +12,7 @@ shell = require 'shell'
 installShortcuts = (finish) ->
   target = path.basename(process.execPath)
   updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
-  spawn(updateDotExe, ['--createShortcut', target]).on('exit', finish)
+  spawn(updateDotExe, ['--createShortcut', target, '-l Desktop,StartMenu']).on('exit', finish)
 
 # Private: Forks to Squirrel in order to remove our app shortcut on the Desktop
 # and in the Start Menu on Windows. Called on app uninstall.
@@ -23,7 +23,7 @@ installShortcuts = (finish) ->
 uninstallShortcuts = (finish) ->
   target = path.basename(process.execPath)
   updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
-  spawn(updateDotExe, ['--removeShortcut', target]).on('exit', finish)
+  spawn(updateDotExe, ['--removeShortcut', target, '-l Desktop,StartMenu']).on('exit', finish)
 
 # Private: When our app is installed, Squirrel (our app install/update framework)
 # invokes our executable with specific parameters, usually of the form

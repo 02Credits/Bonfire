@@ -36,6 +36,9 @@
     $('#sidebar').dblclick(function(e) {
       return $('#sidebar').toggleClass('collapsed');
     });
+    $(window).resize(function() {
+      return scrollToBottom();
+    });
     render = function(message, id) {
       var j, len, plugin, scrollIfStuck;
       if (message != null) {

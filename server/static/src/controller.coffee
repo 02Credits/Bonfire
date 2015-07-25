@@ -28,6 +28,9 @@ define ["jquery", "plugins"], ($, plugins) ->
   $('#sidebar').dblclick (e) ->
     $('#sidebar').toggleClass 'collapsed'
 
+  $(window).resize () ->
+    scrollToBottom()
+
   render = (message, id) ->
     if message?
       # This is a horrible hack and should be replaced at some point

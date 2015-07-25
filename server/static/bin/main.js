@@ -50,12 +50,14 @@
         return location.reload();
       });
       socket.on('message', function(data) {
-        window.messages[data.id] = deepCopy.deepCopy(data.message, 5);
-        localStorage.messages = JSON.stringify(window.messages);
-        if (window.caughtUp) {
-          return controller.recieved(data.message, data.id);
-        } else {
-          return controller.missed(data.message, data.id);
+        if (window.messages[data.id] == null) {
+          window.messages[data.id] = deepCopy.deepCopy(data.message, 5);
+          localStorage.messages = JSON.stringify(window.messages);
+          if (window.caughtUp) {
+            return controller.recieved(data.message, data.id);
+          } else {
+            return controller.missed(data.message, data.id);
+          }
         }
       });
       socket.on('event', function(message) {

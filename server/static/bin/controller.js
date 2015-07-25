@@ -33,6 +33,9 @@
     } else {
       $('#name-input').val("Village Idiot");
     }
+    $('#sidebar').dblclick(function(e) {
+      return $('#sidebar').toggleClass('collapsed');
+    });
     render = function(message, id) {
       var j, len, plugin, scrollIfStuck;
       if (message != null) {

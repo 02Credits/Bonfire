@@ -43,12 +43,13 @@ requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'deepCopy'], (io, con
       location.reload()
 
     socket.on 'message', (data) ->
-      window.messages[data.id] = deepCopy.deepCopy data.message, 5
-      localStorage.messages = JSON.stringify window.messages
-      if window.caughtUp
-        controller.recieved data.message, data.id
-      else
-        controller.missed data.message, data.id
+      if !window.messages[data.id]?
+        window.messages[data.id] = deepCopy.deepCopy data.message, 5
+        localStorage.messages = JSON.stringify window.messages
+        if window.caughtUp
+          controller.recieved data.message, data.id
+        else
+          controller.missed data.message, data.id
 
     socket.on 'event', (message) ->
       controller.event message

@@ -25,6 +25,9 @@ define ["jquery", "plugins"], ($, plugins) ->
   else
     $('#name-input').val "Village Idiot"
 
+  $('#sidebar').dblclick (e) ->
+    $('#sidebar').toggleClass 'collapsed'
+
   render = (message, id) ->
     if message?
       # This is a horrible hack and should be replaced at some point

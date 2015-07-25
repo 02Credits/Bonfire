@@ -70,6 +70,8 @@ appstart = () ->
     mainWindow = new BrowserWindow
       width: 800
       height: 600
+      "min-width": 640
+      "min-height": 480
       "node-integration": false
       icon: __dirname + '/BFicon.png'
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"

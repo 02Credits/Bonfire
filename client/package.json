@@ -1,6 +1,6 @@
 {
   "name": "Bonfire",
   "main": "main.js",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "An extensible chat application."
 }

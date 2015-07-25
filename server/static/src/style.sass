@@ -6,10 +6,13 @@ $ui-bg: #525769
 $highlight: #FFF582
 $accent: #FF6448
 
-html
+html, body
+  -ms-touch-action: none
   overflow: hidden
   font-family: monospace
   background-color: $ui-bg
+  height: 100%
+  width: 100%
 
 p
   margin: 5px
@@ -18,7 +21,7 @@ p
   color: green
 
 #sidebar-content > p
-  margin: 20px 20px 20px 20px
+  margin: 20px
 
 a
   color: $accent
@@ -29,7 +32,7 @@ a
   color: $type-fg
   padding: 5px
   display: inline-block
-  max-width: 75%
+  max-width: 95%
   overflow: hidden
 
 .display-name
@@ -37,12 +40,73 @@ a
   margin-bottom: 10px
   font-weight: bold
 
+.label
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+
+body
+  display: flex
+  flex-direction: row
+
+#content
+  flex: 2 100%
+  display: flex
+  flex-direction: column-reverse
+  justify-content: flex-start
+
 #messages
-  overflow: auto
+  padding: 0px
+  overflow-y: auto
+  overflow-x: hidden
+  width: 100%
+
+#input-bar
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  min-height: 75px
+  max-height: 75px
+  width: 100%
+  height: 250px
 
 #input
+  margin: 15px
+  padding: 0px 0px 0px 15px
+  width: 100%
   background-color: $type-bg
   color: $type-fg
 
+.collapsed
+  min-width: 40px
+  max-width: 40px
+  width: 40px
+  min-height: 40px
+  min-width: 40px
+  height: 40px
+  margin-right: 0px
+  overflow-x: hidden
+  overflow-y: hidden
+
+#sidebar:not(.collapsed)
+  min-width: 200px
+  max-width: 200px
+  width: 200px
+  height: 100%
+
+#sidebar
+  transition: all 0.5s ease
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+
 #sidebar-content
+  padding: 10px
   background-color: $type-bg
+  height: 100%
+  margin: 10px
+
+#name-input
+  width: 100%

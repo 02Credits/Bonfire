@@ -68,6 +68,8 @@ io.on 'connection', (socket) ->
         socket.emit 'message',
               message: exports.messages[i]
               id: i
+    if lastSeen > exports.lastId
+      socket.emit 'clear'
     socket.emit 'caught up'
     console.log 'client connected'
 

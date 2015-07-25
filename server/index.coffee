@@ -42,7 +42,7 @@ io.on 'connection', (socket) ->
   console.log 'http connected'
 
   uploader = new socketIOFileUpload()
-  uploader.dir = __dirname + '/static/temp'
+  uploader.dir = __dirname + '/temp'
   uploader.listen socket
 
   uploader.on 'saved', (e) ->

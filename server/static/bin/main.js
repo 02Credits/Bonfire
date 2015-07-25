@@ -7,13 +7,15 @@
       },
       'deepCopy': {
         exports: 'owl'
+      },
+      'uuid': {
+        exports: 'uuid'
       }
     },
     paths: {
       socketio: '../socket.io/socket.io',
       jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min',
-      SocketIOFileUpload: 'siofu.min',
-      deepCopy: 'deepCopy'
+      SocketIOFileUpload: 'siofu.min'
     }
   });
 

@@ -1,6 +1,7 @@
 app = require 'app'
 path = require 'path'
 spawn = require('child_process').spawn
+shell = require 'shell'
 
 # Private: Forks to Squirrel in order to install or update our app shortcut on
 # the Desktop and in the Start Menu on Windows
@@ -72,6 +73,9 @@ appstart = () ->
       "node-integration": false
       icon: __dirname + '/BFicon.png'
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"
+    mainWindow.webContents.on 'new-window', (e, url) ->
+      e.preventDefault()
+      shell.openExternal url
     mainWindow.on 'closed', ->
       mainWindow = null
 

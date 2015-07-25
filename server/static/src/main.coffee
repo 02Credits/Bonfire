@@ -4,11 +4,12 @@ requirejs.config
       exports: 'io'
     'deepCopy':
       exports: 'owl'
+    'uuid':
+      exports: 'uuid'
   paths:
     socketio: '../socket.io/socket.io'
     jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min'
     SocketIOFileUpload: 'siofu.min'
-    deepCopy: 'deepCopy'
 requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'deepCopy'], (io, controller, siofu, deepCopy) ->
   socket = io()
   fileUploader = new siofu socket

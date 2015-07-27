@@ -8,16 +8,23 @@ define ["jquery", "plugins"], ($, plugins) ->
 
   scrollToBottom = ->
     messagesDiv.scrollTop messagesDiv[0].scrollHeight
+    window.stuck = true
+
+  sendMessage = () ->
+    text = $('input').val()
+    text = text.trim()
+    if text.length < 500 && text.length != 0
+      send { text: $('#input').val(), displayName: $('#name-input').val() }
+    localStorage.displayName = $('#name-input').val()
+    $('#input').val ''
+    scrollToBottom()
 
   $('#input').keydown (e) ->
     if (e.which == 13)
       e.preventDefault()
-      text = $('input').val()
-      text = text.trim()
-      if text.length < 500 && text.length != 0
-        send { text: $('#input').val(), displayName: $('#name-input').val() }
-      localStorage.displayName = $('#name-input').val()
-      $('#input').val ''
+      sendMessage()
+  $('#send').click (e) ->
+    sendMessage()
   $('#input').focus()
 
   if localStorage.displayName?
@@ -25,21 +32,24 @@ define ["jquery", "plugins"], ($, plugins) ->
   else
     $('#name-input').val "Village Idiot"
 
-  $('#sidebar').dblclick (e) ->
-    $('#sidebar').toggleClass 'collapsed'
-
-  $(window).resize () ->
-    scrollToBottom()
+  $(document).ready ->
+    $('.modal-trigger').leanModal();
 
   render = (message, id) ->
     if message?
-      # This is a horrible hack and should be replaced at some point
-      for plugin in plugins
-        plugin(message)
-      messagesDiv.append message.render
+      copy = JSON.parse JSON.stringify message
       scrollIfStuck = ->
         if window.stuck
           scrollToBottom()
+      # This is a horrible hack and should be replaced at some point
+      for plugin in plugins
+        plugin(copy, id)
+
+      elementAtNextIndex = $('div[data-index="#{id + 1}"]')
+      if elementAtNextIndex.length != 0
+        elementAtNextIndex.before copy.render
+      else
+        messagesDiv.append copy.render
       # This hack is to allow whatever content was added to be rendered. Works pretty well.
       setTimeout(scrollIfStuck, 100)
       setTimeout(scrollIfStuck, 1000)

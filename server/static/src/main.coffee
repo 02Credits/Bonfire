@@ -6,11 +6,14 @@ requirejs.config
       exports: 'owl'
     'uuid':
       exports: 'uuid'
+    'materialize':
+      deps: ['jquery']
   paths:
     socketio: '../socket.io/socket.io'
     jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min'
     SocketIOFileUpload: 'siofu.min'
-requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'deepCopy'], (io, controller, siofu, deepCopy) ->
+    materialize: 'materialize.amd.min'
+requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'materialize'], (io, controller, siofu, deepCopy) ->
   socket = io()
   fileUploader = new siofu socket
   fileUploader.listenOnDrop document
@@ -44,7 +47,7 @@ requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'deepCopy'], (io, con
 
     socket.on 'message', (data) ->
       if !window.messages[data.id]?
-        window.messages[data.id] = deepCopy.deepCopy data.message, 5
+        window.messages[data.id] = data.message
         localStorage.messages = JSON.stringify window.messages
         if window.caughtUp
           controller.recieved data.message, data.id

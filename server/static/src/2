@@ -1,5 +1,0 @@
-define [
-  "./greentext"
-  "./links"
-  ], ->
-    arguments

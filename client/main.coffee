@@ -74,6 +74,7 @@ appstart = () ->
       "min-height": 480
       "node-integration": false
       icon: __dirname + '/BFicon.png'
+      title: "Bonfire"
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"
     mainWindow.webContents.on 'new-window', (e, url) ->
       e.preventDefault()

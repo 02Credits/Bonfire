@@ -1,4 +1,4 @@
-@import 'reset'
+@import "materialize"
 
 $type-bg: #EAF6F7
 $type-fg: #914341
@@ -7,38 +7,16 @@ $highlight: #FFF582
 $accent: #FF6448
 
 html, body
-  -ms-touch-action: none
   overflow: hidden
-  font-family: monospace
   background-color: $ui-bg
   height: 100%
   width: 100%
 
-p
-  margin: 5px
-
 .greentext > p
-  color: green
+  color: green !important
 
 #sidebar-content > p
   margin: 20px
-
-a
-  color: $accent
-
-.message
-  margin: 10px
-  background-color: $type-bg
-  color: $type-fg
-  padding: 5px
-  display: inline-block
-  max-width: 95%
-  overflow: hidden
-
-.display-name
-  margin-left: 10px
-  margin-bottom: 10px
-  font-weight: bold
 
 .label
   -webkit-user-select: none
@@ -47,9 +25,21 @@ a
   -o-user-select: none
   user-select: none
 
+.video-container
+  @media #{$small-and-down}
+    width: 80vw
+  @media #{$medium-and-up}
+    width: 50vw
+
+img
+  margin-bottom: -10px
+
 body
   display: flex
   flex-direction: row
+
+iframe
+  margin-bottom: -11px
 
 #content
   flex: 2 100%
@@ -58,56 +48,39 @@ body
   justify-content: flex-start
 
 #messages
-  padding: 0px
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  padding: 20px
   overflow-y: auto
   overflow-x: hidden
   width: 100%
 
 #input-bar
   display: flex
-  flex-direction: row
+  flex-shrink: 0
+  flex-direction: columns
   justify-content: flex-start
-  min-height: 75px
-  max-height: 75px
-  width: 100%
-  height: 250px
+  align-items: center
+  margin: 20px
 
 #input
+  @extend .z-depth-1
+  border-radius: 2px
+  border-style: none
   margin: 15px
+  height: 40px
   padding: 0px 0px 0px 15px
   width: 100%
-  background-color: $type-bg
-  color: $type-fg
 
-.collapsed
-  min-width: 40px
-  max-width: 40px
-  width: 40px
-  min-height: 40px
-  min-width: 40px
-  height: 40px
-  margin-left: -10px
-  margin-top: -10px
-  overflow-x: hidden
-  overflow-y: hidden
+.btn
+  margin: 15px
+  flex-shrink: 0
 
-#sidebar:not(.collapsed)
-  min-width: 200px
-  max-width: 200px
-  width: 200px
-  height: 100%
+.message
+  @extend .card
+  margin: 5px
+  display: inline-block
 
-#sidebar
-  transition: all 0.5s ease
-  display: flex
-  flex-direction: column
-  justify-content: flex-start
-
-#sidebar-content
-  padding: 10px
-  background-color: $type-bg
-  height: 100%
-  margin: 10px
-
-#name-input
-  width: 100%
+.message-container
+  flex-shrink: 0

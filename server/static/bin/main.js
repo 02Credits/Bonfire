@@ -10,16 +10,20 @@
       },
       'uuid': {
         exports: 'uuid'
+      },
+      'materialize': {
+        deps: ['jquery']
       }
     },
     paths: {
       socketio: '../socket.io/socket.io',
       jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min',
-      SocketIOFileUpload: 'siofu.min'
+      SocketIOFileUpload: 'siofu.min',
+      materialize: 'materialize.amd.min'
     }
   });
 
-  requirejs(['socketio', 'controller', 'SocketIOFileUpload', 'deepCopy'], function(io, controller, siofu, deepCopy) {
+  requirejs(['socketio', 'controller', 'SocketIOFileUpload', 'materialize'], function(io, controller, siofu, deepCopy) {
     var fileUploader, send, socket;
     socket = io();
     fileUploader = new siofu(socket);
@@ -51,7 +55,7 @@
       });
       socket.on('message', function(data) {
         if (window.messages[data.id] == null) {
-          window.messages[data.id] = deepCopy.deepCopy(data.message, 5);
+          window.messages[data.id] = data.message;
           localStorage.messages = JSON.stringify(window.messages);
           if (window.caughtUp) {
             return controller.recieved(data.message, data.id);

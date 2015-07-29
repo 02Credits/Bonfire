@@ -54,7 +54,14 @@ module.exports = function(grunt) {
                     version: '0.26.1',
                     platform: 'win32',
                     arch: 'ia32',
-                    icon: './BFiconFinished.ico'
+                    icon: './BFiconFinished.ico',
+                    "version-string": {
+                        CompanyName: "02Credits",
+                        FileDescription: "An extensible chat application",
+                        OriginalFileName: "Bonfire",
+                        ProductName: "Bonfire",
+                        InternalName: "Bonfire"
+                    }
                 }
             }
         },

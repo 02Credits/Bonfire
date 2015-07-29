@@ -2039,7 +2039,7 @@ ul {
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
 
-.z-depth-2 {
+.z-depth-2, #input:focus {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
 .z-depth-3 {
@@ -5556,9 +5556,9 @@ small {
       cursor: pointer; }
   .card.small, .small.message, .card.medium, .medium.message, .card.large, .large.message {
     position: relative; }
-    .card.small .card-image, .small.message .card-image, .card.medium .card-image, .medium.message .card-image, .card.large .card-image, .large.message .card-image {
+    .card.small .card-image, .small.message .card-image, .card.small .message-image, .small.message .message-image, .card.medium .card-image, .medium.message .card-image, .card.medium .message-image, .medium.message .message-image, .card.large .card-image, .large.message .card-image, .card.large .message-image, .large.message .message-image {
       overflow: hidden; }
-    .card.small .card-content, .small.message .card-content, .card.medium .card-content, .medium.message .card-content, .card.large .card-content, .large.message .card-content {
+    .card.small .card-content, .small.message .card-content, .card.small .message-content, .small.message .message-content, .card.medium .card-content, .medium.message .card-content, .card.medium .message-content, .medium.message .message-content, .card.large .card-content, .large.message .card-content, .card.large .message-content, .large.message .message-content {
       overflow: hidden; }
     .card.small .card-action, .small.message .card-action, .card.medium .card-action, .medium.message .card-action, .card.large .card-action, .large.message .card-action {
       position: absolute;
@@ -5567,25 +5567,25 @@ small {
       right: 0; }
   .card.small, .small.message {
     height: 300px; }
-    .card.small .card-image, .small.message .card-image {
+    .card.small .card-image, .small.message .card-image, .card.small .message-image, .small.message .message-image {
       height: 150px; }
-    .card.small .card-content, .small.message .card-content {
+    .card.small .card-content, .small.message .card-content, .card.small .message-content, .small.message .message-content {
       height: 150px; }
   .card.medium, .medium.message {
     height: 400px; }
-    .card.medium .card-image, .medium.message .card-image {
+    .card.medium .card-image, .medium.message .card-image, .card.medium .message-image, .medium.message .message-image {
       height: 250px; }
-    .card.medium .card-content, .medium.message .card-content {
+    .card.medium .card-content, .medium.message .card-content, .card.medium .message-content, .medium.message .message-content {
       height: 150px; }
   .card.large, .large.message {
     height: 500px; }
-    .card.large .card-image, .large.message .card-image {
+    .card.large .card-image, .large.message .card-image, .card.large .message-image, .large.message .message-image {
       height: 330px; }
-    .card.large .card-content, .large.message .card-content {
+    .card.large .card-content, .large.message .card-content, .card.large .message-content, .large.message .message-content {
       height: 170px; }
-  .card .card-image, .message .card-image {
+  .card .card-image, .message .card-image, .card .message-image, .message .message-image {
     position: relative; }
-    .card .card-image img, .message .card-image img {
+    .card .card-image img, .message .card-image img, .card .message-image img, .message .message-image img {
       border-radius: 2px 2px 0 0;
       position: relative;
       left: 0;
@@ -5593,18 +5593,18 @@ small {
       top: 0;
       bottom: 0;
       width: 100%; }
-    .card .card-image .card-title, .message .card-image .card-title {
+    .card .card-image .card-title, .message .card-image .card-title, .card .message-image .card-title, .message .message-image .card-title {
       position: absolute;
       bottom: 0;
       left: 0;
       padding: 20px; }
-  .card .card-content, .message .card-content {
+  .card .card-content, .message .card-content, .card .message-content, .message .message-content {
     padding: 20px;
     border-radius: 0 0 2px 2px; }
-    .card .card-content p, .message .card-content p {
+    .card .card-content p, .message .card-content p, .card .message-content p, .message .message-content p {
       margin: 0;
       color: inherit; }
-    .card .card-content .card-title, .message .card-content .card-title {
+    .card .card-content .card-title, .message .card-content .card-title, .card .message-content .card-title, .message .message-content .card-title {
       line-height: 48px; }
   .card .card-action, .message .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
@@ -8326,7 +8326,7 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 0px 20px 0px 20px;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%; }
@@ -8337,7 +8337,7 @@ iframe {
   flex-direction: columns;
   justify-content: flex-start;
   align-items: center;
-  margin: 20px; }
+  margin: 0px 20px 0px 20px; }
 
 #input {
   border-radius: 2px;
@@ -8345,7 +8345,11 @@ iframe {
   margin: 15px;
   height: 40px;
   padding: 0px 0px 0px 15px;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.5s ease; }
+
+.message-content {
+  padding: 0px 10px 5px 10px !important; }
 
 .btn, .btn-large {
   margin: 15px;

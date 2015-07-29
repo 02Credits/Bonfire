@@ -1,4 +1,4 @@
-define ["jquery", "plugins"], ($, plugins) ->
+define ["jquery", "plugins", "materialize"], ($, plugins) ->
   window.send = {}
   window.stuck = true
 
@@ -30,10 +30,20 @@ define ["jquery", "plugins"], ($, plugins) ->
   if localStorage.displayName?
     $('#name-input').val localStorage.displayName
   else
-    $('#name-input').val "Village Idiot"
+    dumbNames = [
+            "Village Idiot",
+            "Dirty Peasant",
+            "Dumbster",
+            "assfaggot"
+      ]
+    randomIndex = Math.floor(Math.random() * dumbNames.length)
+    $('#name-input').val dumbNames[randomIndex]
 
   $(document).ready ->
     $('.modal-trigger').leanModal();
+
+  $('#settings').click (e) ->
+    $('label').addClass "active"
 
   render = (message, id) ->
     if message?
@@ -52,7 +62,6 @@ define ["jquery", "plugins"], ($, plugins) ->
         messagesDiv.append copy.render
       # This hack is to allow whatever content was added to be rendered. Works pretty well.
       setTimeout(scrollIfStuck, 100)
-      setTimeout(scrollIfStuck, 1000)
 
   startup: (messages, sendCallback) ->
     window.send = sendCallback

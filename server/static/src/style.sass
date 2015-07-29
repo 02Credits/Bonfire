@@ -51,7 +51,7 @@ iframe
   display: flex
   flex-direction: column
   justify-content: flex-start
-  padding: 20px
+  padding: 0px 20px 0px 20px
   overflow-y: auto
   overflow-x: hidden
   width: 100%
@@ -62,7 +62,7 @@ iframe
   flex-direction: columns
   justify-content: flex-start
   align-items: center
-  margin: 20px
+  margin: 0px 20px 0px 20px
 
 #input
   @extend .z-depth-1
@@ -72,6 +72,17 @@ iframe
   height: 40px
   padding: 0px 0px 0px 15px
   width: 100%
+  transition: all 0.5s ease
+
+#input:focus
+  @extend .z-depth-2
+
+.message-content
+  @extend .card-content
+  padding: 0px 10px 5px 10px !important
+
+.message-image
+  @extend .card-image
 
 .btn
   margin: 15px

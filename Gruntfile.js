@@ -51,14 +51,16 @@ module.exports = function(grunt) {
                     name: 'Bonfire',
                     dir: 'build',
                     out: 'dist',
-                    version: '0.26.1',
+                    version: '0.30.1',
                     platform: 'win32',
                     arch: 'ia32',
                     icon: './BFiconFinished.ico',
+                    asar: true,
                     "version-string": {
-                        CompanyName: "02Credits",
+                        CompanyName: "02Credits LLC",
+                        LegalCopyright: "Copyright 2015 02Credits LLC",
                         FileDescription: "An extensible chat application",
-                        OriginalFileName: "Bonfire",
+                        OriginalFileName: "Bonfire.exe",
                         ProductName: "Bonfire",
                         InternalName: "Bonfire"
                     }

@@ -1,4 +1,4 @@
-define ["jquery", "plugins", "materialize"], ($, plugins) ->
+define ["jquery", "plugins", "userName", "uiSetup"], ($, plugins) ->
   window.send = {}
   window.stuck = true
 
@@ -26,24 +26,6 @@ define ["jquery", "plugins", "materialize"], ($, plugins) ->
   $('#send').click (e) ->
     sendMessage()
   $('#input').focus()
-
-  if localStorage.displayName?
-    $('#name-input').val localStorage.displayName
-  else
-    dumbNames = [
-            "Village Idiot",
-            "Dirty Peasant",
-            "Dumbster",
-            "assfaggot"
-      ]
-    randomIndex = Math.floor(Math.random() * dumbNames.length)
-    $('#name-input').val dumbNames[randomIndex]
-
-  $(document).ready ->
-    $('.modal-trigger').leanModal();
-
-  $('#settings').click (e) ->
-    $('label').addClass "active"
 
   render = (message, id) ->
     if message?

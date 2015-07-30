@@ -6,15 +6,7 @@ module.exports = function(grunt) {
         copy: {
             build: {
                 cwd: 'client',
-                src: [ '**', '!**/*.coffee', '!**/*.js', '!**/*.sass', '!**/*.scss', '!**/*.tern-port' ],
-                dest: 'build',
-                expand: true
-            }
-        },
-        babel: {
-            build: {
-                cwd: 'client',
-                src: [ '**/*.js' ],
+                src: [ '**', '!**/*.coffee', '!**/*.sass', '!**/*.scss', '!**/*.tern-port' ],
                 dest: 'build',
                 expand: true
             }
@@ -110,7 +102,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('gitCommit', [ 'shell:add', "shell:commit" ]);
     grunt.registerTask('git', [ 'shell:pull', 'gitCommit', 'shell:push' ]);
-    grunt.registerTask('build', [ 'clean:build', 'copy', 'babel', 'coffee', 'sass' ]);
+    grunt.registerTask('build', [ 'clean:build', 'copy', 'coffee', 'sass' ]);
     grunt.registerTask('package',
                        [
                            'bump',

@@ -56,13 +56,15 @@ module.exports = function(grunt) {
                     arch: 'ia32',
                     icon: './BFiconFinished.ico',
                     asar: true,
-                    "version-string": {
-                        CompanyName: "02Credits LLC",
-                        LegalCopyright: "Copyright 2015 02Credits LLC",
-                        FileDescription: "An extensible chat application",
-                        OriginalFileName: "Bonfire.exe",
-                        ProductName: "Bonfire",
-                        InternalName: "Bonfire"
+                    'version-string': {
+                        'CompanyName': "02Credits LLC",
+                        'LegalCopyright': "Copyright 2015 02Credits LLC",
+                        'FileDescription': "An extensible chat application",
+                        'OriginalFileName': "Bonfire.exe",
+                        'FileVersion': "0.0.1",
+                        'ProductVersion': "0.0.1",
+                        'ProductName': "Bonfire",
+                        'InternalName': "Bonfire.exe"
                     }
                 }
             }

@@ -13,6 +13,8 @@ requirejs.config
     jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min'
     SocketIOFileUpload: 'siofu.min'
     materialize: 'materialize.amd.min'
+    rx: 'http://cdnjs.cloudflare.com/ajax/libs/rxjs/2.1.18/rx'
+    "rx.time": 'http://cdnjs.cloudflare.com/ajax/libs/rxjs/2.1.18/rx.time'
 requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'materialize'], (io, controller, siofu, deepCopy) ->
   socket = io()
   fileUploader = new siofu socket

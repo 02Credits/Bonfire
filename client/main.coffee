@@ -1,5 +1,4 @@
 app = require 'app'
-rx = require 'rx'
 fs = require 'fs'
 path = require 'path'
 spawn = require('child_process').spawn
@@ -60,14 +59,6 @@ handleSquirrelEvents = (appStart) ->
       when 'obsolete' then app.quit()
 
 appstart = () ->
-  rx.Observable.timer(0, 6*60*60*1000).subscribe ->
-      updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
-      return unless fs.existsSync(updateDotExe)
-      console.log "Checking for updates"
-      proc = spawn updateDotExe, ['--update', 'http://02credits.github.io/Bonfire-Releases']
-      proc.stdout.on 'data', (m) -> logger.info("Update: " + m)
-      proc.stderr.on 'data', (m) -> logger.info("Update: " + m)
-
   BrowserWindow = require 'browser-window'
   require('crash-reporter').start()
 
@@ -84,6 +75,7 @@ appstart = () ->
       "min-height": 480
       "node-integration": false
       icon: __dirname + '/BFicon.png'
+      preload: __dirname + '/preload.js'
       title: "Bonfire"
     mainWindow.loadUrl "http://the-simmons.dnsalias.net"
     mainWindow.webContents.on 'new-window', (e, url) ->

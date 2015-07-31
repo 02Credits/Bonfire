@@ -1,4 +1,5 @@
 app = require 'app'
+logger = require 'winston'
 fs = require 'fs'
 path = require 'path'
 spawn = require('child_process').spawn
@@ -68,6 +69,7 @@ appstart = () ->
     app.quit()
 
   app.on 'ready', ->
+    logger.info 'ready'
     mainWindow = new BrowserWindow
       width: 800
       height: 600
@@ -81,7 +83,16 @@ appstart = () ->
     mainWindow.webContents.on 'new-window', (e, url) ->
       e.preventDefault()
       shell.openExternal url
+    mainWindow.flashFrame true
     mainWindow.on 'closed', ->
       mainWindow = null
+
+updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
+if !fs.existsSync updateDotExe
+  logger.info "no update.exe"
+else
+  proc = spawn updateDotExe, ['--update', 'http://02credits.github.io/Bonfire-Updates']
+  proc.stdout.on 'data', (m) -> logger.info "Update: " + m
+  proc.stderr.on 'data', (m) -> logger.info "Update: " + m
 
 handleSquirrelEvents appstart

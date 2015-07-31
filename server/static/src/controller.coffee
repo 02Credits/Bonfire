@@ -1,4 +1,4 @@
-define ["jquery", "plugins", "userName", "uiSetup"], ($, plugins) ->
+define ["jquery", "plugins", "focusManager", "userName", "uiSetup"], ($, plugins, focusManager) ->
   window.send = {}
   window.stuck = true
 
@@ -58,6 +58,8 @@ define ["jquery", "plugins", "userName", "uiSetup"], ($, plugins) ->
     render message, id
   recieved: (message, id) ->
     render message, id
+    if window.notifier? and !focusManager.focused
+      window.notifier.notify(true)
   event: (message) ->
   connected: ->
   disconnected: ->

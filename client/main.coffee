@@ -83,15 +83,14 @@ appstart = () ->
     mainWindow.webContents.on 'new-window', (e, url) ->
       e.preventDefault()
       shell.openExternal url
-    mainWindow.flashFrame true
     mainWindow.on 'closed', ->
       mainWindow = null
 
-updateDotExe = path.resolve path.dirname(process.execPath), '..', 'update.exe'
+updateDotExe = path.resolve path.dirname(process.execPath), '..', 'Update.exe'
 if !fs.existsSync updateDotExe
   logger.info "no update.exe"
 else
-  proc = spawn updateDotExe, ['--update', 'http://02credits.github.io/Bonfire-Updates']
+  proc = spawn updateDotExe, ['--update', 'http://02credits.github.io/Bonfire-Releases']
   proc.stdout.on 'data', (m) -> logger.info "Update: " + m
   proc.stderr.on 'data', (m) -> logger.info "Update: " + m
 

@@ -1,14 +1,13 @@
 @import "materialize"
 
-$type-bg: #EAF6F7
-$type-fg: #914341
-$ui-bg: #525769
-$highlight: #FFF582
-$accent: #FF6448
+$darkerGray: #424242
+$darkGray: #616161
+$darkOrange: #C77840
+$yellow: #FBD638
 
 html, body
   overflow: hidden
-  background-color: $ui-bg
+  background-color: $darkerGray
   height: 100%
   width: 100%
 
@@ -38,7 +37,13 @@ body
   display: flex
   flex-direction: row
 
+a
+  forground-color: $yellow
+
 iframe
+  margin-bottom: -11px
+
+video
   margin-bottom: -11px
 
 #content
@@ -80,9 +85,20 @@ iframe
 .message-content
   @extend .card-content
   padding: 0px 10px 5px 10px !important
+  max-width: 80vw
+  Text-wrap: normal
 
 .message-image
   @extend .card-image
+
+.time-stamp
+  font-size: 14px
+  padding-top: 17px
+  padding-left: 20px
+  color: $darkGray !important
+
+.card-title
+  color: $darkOrange !important
 
 .btn
   margin: 15px
@@ -95,3 +111,13 @@ iframe
 
 .message-container
   flex-shrink: 0
+
+::-webkit-scrollbar
+  width: 12px
+
+::-webkit-scrollbar-track
+  background: none
+
+::-webkit-scrollbar-thumb
+  background: $darkGray
+  border: 0px

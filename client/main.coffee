@@ -55,7 +55,8 @@ handleSquirrelEvents = (appStart) ->
   app.on 'ready', ->
     switch m[1]
       when 'install' then installShortcuts app.quit
-      when 'updated' then installShortcuts app.quit
+      when 'updated'
+        installShortcuts app.quit
       when 'uninstall' then uninstallShortcuts app.quit
       when 'obsolete' then app.quit()
 

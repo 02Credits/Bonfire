@@ -29,14 +29,13 @@ requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'materialize'], (io, 
   send = (message) ->
     socket.emit 'message', message
 
-  controller.startup(window.messages, send)
+  controller.startup send
 
   socket.on 'disconnect', ->
     controller.disconnected()
     window.caughtUp = false
 
   socket.on 'connect', ->
-    controller.connected()
     socket.emit 'connected', window.messages.length - 1
 
     socket.on 'refresh', ->
@@ -53,11 +52,10 @@ requirejs ['socketio', 'controller', 'SocketIOFileUpload', 'materialize'], (io, 
         localStorage.messages = JSON.stringify window.messages
         if window.caughtUp
           controller.recieved data.message, data.id
-        else
-          controller.missed data.message, data.id
 
     socket.on 'event', (message) ->
       controller.event message
 
-    socket.on 'caught up', ->
+    socket.on 'caught up', () ->
       window.caughtUp = true
+      controller.connected(window.messages)

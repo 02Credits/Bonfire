@@ -39,13 +39,12 @@
     send = function(message) {
       return socket.emit('message', message);
     };
-    controller.startup(window.messages, send);
+    controller.startup(send);
     socket.on('disconnect', function() {
       controller.disconnected();
       return window.caughtUp = false;
     });
     return socket.on('connect', function() {
-      controller.connected();
       socket.emit('connected', window.messages.length - 1);
       socket.on('refresh', function() {
         return location.reload();
@@ -61,8 +60,6 @@
           localStorage.messages = JSON.stringify(window.messages);
           if (window.caughtUp) {
             return controller.recieved(data.message, data.id);
-          } else {
-            return controller.missed(data.message, data.id);
           }
         }
       });
@@ -70,7 +67,8 @@
         return controller.event(message);
       });
       return socket.on('caught up', function() {
-        return window.caughtUp = true;
+        window.caughtUp = true;
+        return controller.connected(window.messages);
       });
     });
   });

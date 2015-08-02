@@ -55,15 +55,19 @@ io.on 'connection', (socket) ->
     dest = fs.createWriteStream(__dirname + '/static/uploads/' + newFileName)
     source.pipe dest
     exports.lastId = exports.lastId + 1
+    messageObj = { text: "the-simmons.dnsalias.net/uploads/" + newFileName }
     io.sockets.emit 'message',
-      message: { text: "the-simmons.dnsalias.net/uploads/" + newFileName }
+      message: messageObj
       id: exports.lastId
+    exports.messages[exports.lastId] = messageObj
+    save()
 
   uploader.on 'error', (e) ->
     console.log "upload error", e
 
   socket.on 'connected', (lastSeen) ->
     if lastSeen < exports.lastId
+      missedMessages = []
       for i in [lastSeen + 1..exports.lastId]
         socket.emit 'message',
               message: exports.messages[i]
@@ -77,16 +81,28 @@ io.on 'connection', (socket) ->
     refresh()
 
   socket.on 'message',  (message) ->
-    console.log('message: ' + JSON.stringify(message))
-    exports.lastId = exports.lastId + 1
-    exports.messages[exports.lastId] = message
-    # save every time (probably shorten this when things get crazy)
-    save()
-    # callback with associated id
-    console.log 'message broadcast'
-    io.sockets.emit 'message',
-        message: message
-        id: exports.lastId
+    if !exports.lastMessage? or message.text != exports.lastMessage.text
+      console.log('message: ' + JSON.stringify(message))
+      now = new Date()
+      hour = now.getHours()
+      if hour == 0
+        hour = 12
+      if hour > 12
+        hour = hour - 12
+      minute = "" + now.getMinutes()
+      if minute.length == 1
+        minute = "0" + minute
+      message.time = "#{now.getMonth() + 1}/#{now.getDate()}/#{hour}:#{minute}"
+      exports.lastId = exports.lastId + 1
+      exports.messages[exports.lastId] = message
+      exports.lastMessage = message
+      # save every time (probably shorten this when things get crazy)
+      save()
+      # callback with associated id
+      console.log 'message broadcast'
+      io.sockets.emit 'message',
+          message: message
+          id: exports.lastId
 
   socket.on 'event', (message) ->
     io.sockets.emit 'event', message

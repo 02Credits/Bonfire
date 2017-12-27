@@ -1,8 +1,35 @@
 {
+  "name": "BonfireClient",
+  "version": "1.0.0",
+  "main": "bin/main.js",
+  "license": "MIT",
   "devDependencies": {
-    "@types/express": "^4.0.37"
+    "@types/mithril": "^1.1.11",
+    "@types/node": "^8.0.12",
+    "babel-core": "^6.25.0",
+    "babel-plugin-inferno": "^3.2.0",
+    "css-loader": "^0.28.4",
+    "electron": "^1.6.11",
+    "gulp": "^3.9.1",
+    "gutil": "^1.6.4",
+    "html-webpack-plugin": "^2.29.0",
+    "html-webpack-template": "^5.6.0",
+    "source-map-loader": "^0.2.1",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.5.0",
+    "tslint-config-standard": "^6.0.1",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.4.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
-    "@types/socket.io-client": "^1.4.30"
+    "@types/express": "^4.0.36",
+    "express": "^4.15.3",
+    "incompose": "^1.0.0",
+    "inferno-component": "^3.6.4",
+    "mithril": "^1.1.5",
+    "ramda": "^0.24.1"
   }
 }

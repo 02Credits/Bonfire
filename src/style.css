@@ -1,0 +1,39 @@
+#grid-wrapper {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: "groups      main"
+                         "add-groups  main";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 50px;
+}
+
+#grid-wrapper > #groups {
+    grid-area: groups;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grid-wrapper > #add-groups {
+    grid-area: add-groups;
+    background-color: yellow;
+}
+
+#grid-wrapper > .chat {
+    grid-area: main;
+    background-color: blue;
+}
+
+.group-icon {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 0px 5px;
+}
+
+webview {
+    width: 100%;
+    height: 100%;
+}

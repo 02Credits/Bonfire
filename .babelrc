@@ -1,0 +1,6 @@
+{
+  "compact": false,
+  "plugins": [
+    ["babel-plugin-inferno", {"imports": true}]
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "Bonfire",
-  "main": "main.js",
-  "version": "0.1.42",
-  "description": "An extensible chat application.",
-  "dependencies": {
-    "winston": "^1.0.1"
-  }
-}

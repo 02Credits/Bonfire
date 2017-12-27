@@ -1,0 +1,43 @@
+@import "materialize"
+@import "colors"
+
+#input-bar
+  display: flex
+  flex-shrink: 0
+  justify-content: flex-start
+  align-items: center
+  margin: 0px 10px 0px 20px
+
+#input
+  @extend .z-depth-1
+  border-radius: 2px
+  border-style: none
+  margin: 15px
+  height: auto
+  padding: 10px 0px 10px 15px
+  width: 100%
+  transition: all 0.5s ease
+  resize: none
+  outline: none
+  white-space: pre-line
+
+#input:disabled
+  @extend .grey
+
+#input:focus
+  @extend .z-depth-2
+
+.editing
+  border-color: orange !important
+  border-width: 4px !important
+  border-style: solid !important
+
+.searching
+  border-color: blue !important
+  border-width: 4px !important
+  border-style: solid !important
+
+.reacting
+  border-color: green !important
+  border-width: 4px !important
+  border-style: solid !important

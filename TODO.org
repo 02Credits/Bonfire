@@ -1,8 +1,0 @@
-* Todos
-** TODO  Figure out how to capture shift enter to insert a return. There has got to be a way somehow...      <2015-07-20 Mon 23:12>
- Might have to listen on all key strokes and keep a key map dictionary. Hopefully it doesn't come to that...
-
- Link: file:c:/dev/Projects/Bonfire/server/static/src/controller.coffee::$('#input').keydown%20(e)%20->
-** TODO  Fix horrible hack here. Its terrible.      <2015-07-21 Tue 23:02>
- 
- Link: file:c:/dev/Projects/Bonfire/server/static/src/controller.coffee::#%20This%20is%20a%20horrible%20hack%20and%20should%20be%20replaced%20at%20some%20point

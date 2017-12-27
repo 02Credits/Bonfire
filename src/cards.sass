@@ -1,0 +1,32 @@
+@import "materialize"
+@import "colors"
+
+$width: 168px
+$height: 244px
+$spacing: 40px
+
+img.memeCard
+  z-index: 50
+  transition: all 0.5s, right 1s
+  height: $height
+  width: $width
+  right: 0.5 * $spacing - $width
+  bottom: 0.5 * $height
+  position: absolute
+
+img.memeCard.open
+  transform: scale(1)
+
+img.memeCard.open:hover
+  bottom: 0.75 * $height
+  transform: scale(1.1)
+  transform-origin: center
+
+img.memeCard:not(.open):hover
+  right: $spacing - $width
+
+img.memeCard.focusedCard
+  position: absolute !important
+  right: 25% !important
+  bottom: 300px !important
+  transform: scale(2) translate(-50%, -50%) !important

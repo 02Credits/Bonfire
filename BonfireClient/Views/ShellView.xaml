@@ -1,0 +1,28 @@
+<controls:MetroWindow x:Class="BonfireClient.Views.ShellView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:cal="http://www.caliburnproject.org"
+                      EnableDWMDropShadow="True"
+                      ResizeMode="CanResizeWithGrip"
+                      RightWindowCommandsOverlayBehavior="Never"
+                      LeftWindowCommandsOverlayBehavior="Never">
+    <controls:MetroWindow.Flyouts>
+        <controls:FlyoutsControl>
+            <controls:Flyout IsOpen="{Binding FlyoutVisible}" Header="{Binding FlyoutHeader}" Position="{Binding FlyoutPosition}" Height="{Binding FlyoutHeight}" Width="{Binding FlyoutWidth}">
+                <ContentControl cal:View.Model="{Binding FlyoutViewModel}"/>
+            </controls:Flyout>
+        </controls:FlyoutsControl>
+    </controls:MetroWindow.Flyouts>
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <Button x:Name="Host" cal:Message.Attach="[Event Click] = [Action Host()]">
+                Host Bro Council
+            </Button>
+            <Button x:Name="Connect" cal:Message.Attach="[Event Click] = [Action Connect()]">
+                Connect To Bro Council
+            </Button>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+    <controls:TransitioningContentControl x:Name="MainViewModel" Transition="RightReplace"/>
+</controls:MetroWindow>

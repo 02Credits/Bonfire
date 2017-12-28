@@ -1,0 +1,8 @@
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\bin\Debug\Lidgren.Network.XML
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\bin\Debug\Lidgren.Network.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\bin\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\obj\Debug\Lidgren.Network.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\obj\Debug\Lidgren.Network.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\obj\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\bin\Debug\Lidgren.Network.dll.CodeAnalysisLog.xml
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Lidgren.Network\bin\Debug\Lidgren.Network.dll.lastcodeanalysissucceeded

@@ -1,0 +1,15 @@
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\BonfireNetworking.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\BonfireNetworking.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\obj\Debug\BonfireNetworking.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\obj\Debug\BonfireNetworking.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\obj\Debug\BonfireNetworking.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\Castle.Core.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\Lidgren.Network.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\protobuf-net.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\Castle.Core.xml
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\Lidgren.Network.xml
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\protobuf-net.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\BonfireNetworking\bin\Debug\protobuf-net.xml

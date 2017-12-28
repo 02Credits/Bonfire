@@ -1,0 +1,8 @@
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\bin\Debug\Utils.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\bin\Debug\Utils.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\obj\Debug\Utils.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\obj\Debug\Utils.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\bin\Debug\protobuf-net.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\bin\Debug\protobuf-net.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\Utils\bin\Debug\protobuf-net.xml

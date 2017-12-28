@@ -1,0 +1,41 @@
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.dll
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.dll
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.dll
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.xml
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.xml
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.pdb
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.xml
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Dropbox\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Utils.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.xml
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Utils.pdb
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.xml
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.pdb
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.xml
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Desktop\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\Castle.Core.xml
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\protobuf-net.xml
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\obj\Debug\NetworkingLibrary.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.dll
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.pdb
+C:\Users\Keith\Dropbox\Keith's Crap\Bonfire\NetworkingLibrary\bin\Debug\Lidgren.Network.xml
